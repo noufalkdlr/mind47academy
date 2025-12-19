@@ -14,8 +14,10 @@ export default function Home() {
             className="transition-transform scale-120 translate-y-4 duration-500 ease-in-out group-hover:scale-130"
           />
         </div>
-        <div>
-          <h1>A Complete mind solution</h1>
+        <div className="pt-12  flex flex-col gap-4">
+          <h1 className="text-5xl">Shaping Minds. Building Futures.</h1>
+          <p className="w-72">Empowering students with knowledge, confidence, and skills to succeed in academics and beyond.</p>
+          <button className="bg-white font-medium text-black w-46 px-6 py-3 rounded-full" >Start Your Journey</button>
         </div>
       </div>
     </div>
