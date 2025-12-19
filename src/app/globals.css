@@ -1,2 +1,17 @@
 @import "tailwindcss";
 
+@theme {
+  --font-inter: var(--font-inter);
+  --font-montserrat: var(--font-montserrat);
+}
+
+
+@layer utilities {
+  .font-sans {
+    font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  }
+
+  .font-heading {
+    font-family: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
+  }
+}

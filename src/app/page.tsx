@@ -10,8 +10,8 @@ export default function Home() {
       >
         <div className="flex flex-col-reverse justify-end lg:flex-row lg:items-center lg:pt-36 lg:justify-between  pt-26  text-white ">
           <div className="pt-8  flex flex-col gap-4">
-            <h1 className="text-5xl  lg:w-96 ">Shaping Minds. Building Futures.</h1>
-            <p className="w-72">
+            <h1 className="text-5xl  lg:w-96 font-heading ">Shaping Minds. Building Futures.</h1>
+            <p className="w-72 font-sans ">
               Empowering students with knowledge, confidence, and skills to
               succeed in academics and beyond.
             </p>
