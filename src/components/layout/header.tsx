@@ -2,13 +2,36 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect, use } from "react";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const [show, setShow] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      
+      setLastScrollY((prev) => {
+        if (currentScrollY > prev && currentScrollY > 80) {
+          setShow(false);
+        } else {
+          setShow(true);
+        }
+        return currentScrollY; 
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <header className="fixed w-full z-50 font-sans ">
+    <header
+      className={`fixed top-0 w-full z-50 transition-transform duration-300 ease-in-out
+        ${show ? "translate-y-0" : "-translate-y-full"}`}
+    >
       <div className="flex justify-between bg-black px-4 lg:px-44 h-16 items-center py-10 ">
         {/* Logo */}
 
