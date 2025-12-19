@@ -8,7 +8,7 @@ export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed w-full z-50">
+    <header className="fixed w-full z-50 font-sans ">
       <div className="flex justify-between bg-black px-4 lg:px-44 h-16 items-center py-10 ">
         {/* Logo */}
 
