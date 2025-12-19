@@ -7,20 +7,22 @@ import { useState, useEffect, use } from "react";
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [show, setShow] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
 
   useEffect(() => {
+
+    let lastScrollY = window.scrollY
+
     const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      
-      setLastScrollY((prev) => {
-        if (currentScrollY > prev && currentScrollY > 80) {
+
+        const currentScrollY = window.scrollY;
+
+        if (currentScrollY > lastScrollY && currentScrollY > 80) {
           setShow(false);
         } else {
           setShow(true);
         }
-        return currentScrollY; 
-      });
+
+        lastScrollY = currentScrollY
     };
 
     window.addEventListener("scroll", handleScroll);
